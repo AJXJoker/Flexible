@@ -1,0 +1,81 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' // 启用 kapt 插件
+}
+
+
+android {
+    namespace 'com.flexible.credit.me.lib_base'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 34
+        dataBinding {
+            //noinspection DataBindingWithoutKapt
+            enabled = true
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.1'
+    }
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    api libs.androidx.appcompat
+    api libs.androidx.core.ktx
+    api libs.androidx.lifecycle.runtime.ktx
+
+    api libs.androidx.lifecycle.livedata.ktx
+    api libs.androidx.lifecycle.viewmodel.ktx
+    api libs.androidx.lifecycle.extensions
+
+    api libs.androidx.multidex
+
+
+    // OkHttp
+    api libs.okhttp
+
+    // Retrofit
+    api libs.retrofit
+    api libs.converter.gson // Gson Converter 用于解析 JSON
+
+    api libs.logging.interceptor
+
+    api libs.androidx.fragment.ktx
+    api libs.androidx.activity.ktx
+
+    // Kotlin Coroutines for Retrofit
+    api libs.kotlinx.coroutines.core
+    api libs.kotlinx.coroutines.android
+
+    api libs.androidx.constraintlayout
+    api libs.androidx.viewpager2
+
+}
+

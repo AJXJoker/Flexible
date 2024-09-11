@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <declare-styleable name="ArcImageView">
+        <attr name="arcHeight" format="dimension" />
+        <attr name="arcDirectionUpwards" format="boolean" /> <!-- 控制弧线向上绘制 -->
+        <attr name="arcDirectionOutwards" format="boolean" /> <!-- 控制弧线向外突出 -->
+    </declare-styleable>
+
+
+</resources>

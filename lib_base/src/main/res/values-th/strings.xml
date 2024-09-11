@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">สินเชื่อยืดหยุ่น</string>
+
+    <string name="login_msg_country_name_zh_hint">泰國</string>
+    <string name="login_msg_country_name_en_flag_hint">India</string>
+    <string name="login_phone_hint_ms">请输入手机号</string>
+
+</resources>

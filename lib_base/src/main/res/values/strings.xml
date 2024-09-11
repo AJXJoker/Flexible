@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">灵活贷款</string>
+
+    <string name="login_msg_country_name_zh_hint">泰國</string>
+    <string name="login_msg_country_name_en_flag_hint">India</string>
+    <string name="login_phone_hint_ms">请输入手机号</string>
+
+    <string name="login_msg_1">India +66</string>
+
+    <string name="login_btn_login">LogIn</string>
+
+
+    <string name="home_bottom_one_msg">借款</string>
+    <string name="home_bottom_two_msg">订单</string>
+    <string name="home_bottom_three_msg">我的</string>
+
+</resources>

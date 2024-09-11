@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup" />
+
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <RadioButton
+                android:id="@+id/radio_home"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/home_one_select"
+                android:gravity="center"
+                android:text="@string/home_bottom_one_msg"
+                android:textColor="@drawable/selector_main_radiobutton_text"
+                android:textSize="11sp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText,SmallSp" />
+
+            <RadioButton
+                android:id="@+id/radio_order"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_two_select"
+                android:gravity="center"
+                android:text="@string/home_bottom_two_msg"
+                android:textColor="@drawable/selector_main_radiobutton_text"
+                android:textSize="11sp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText,SmallSp" />
+
+
+            <RadioButton
+                android:id="@+id/radio_user"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="false"
+                android:drawableTop="@drawable/home_three_select"
+                android:gravity="center"
+                android:text="@string/home_bottom_three_msg"
+                android:textColor="@drawable/selector_main_radiobutton_text"
+                android:textSize="11sp"
+                android:visibility="visible"
+                tools:ignore="HardcodedText,SmallSp" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

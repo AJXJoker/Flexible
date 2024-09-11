@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="translant">#00000000</color>
+    <!-- 应用的主色调（一般用于Toolbar、AppBar等） -->
+    <color name="colorPrimary">#6200EE</color>
+    <!-- 状态栏的颜色（一般比主色调稍暗） -->
+    <color name="colorPrimaryDark">#3700B3</color>
+    <!-- 强调色（用于按钮等UI元素） -->
+    <color name="colorAccent">#03DAC5</color>
+
+    <!-- 如果需要额外的颜色，可以在这里定义 -->
+    <color name="light_blue">#F0F8FF</color> <!-- 示例颜色，可以自定义 -->
+</resources>
