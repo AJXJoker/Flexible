@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 设置背景颜色和透明度 -->
+    <solid android:color="#FA4E4E" />
+
+    <!-- 设置圆角 -->
+    <corners android:radius="@dimen/dp_4" />
+</shape>

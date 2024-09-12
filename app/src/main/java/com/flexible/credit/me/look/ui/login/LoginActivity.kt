@@ -31,7 +31,6 @@ class LoginActivity : BaseDataBindingActivity<LoginViewModel, ActivityLoginBindi
             "《Privacy Policy》",
             "https://example.com/privacy-policy"
         )
-
     }
 
     override fun initData() {

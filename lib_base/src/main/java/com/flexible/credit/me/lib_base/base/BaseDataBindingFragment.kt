@@ -9,6 +9,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.Observer
 import androidx.fragment.app.Fragment
+import com.flexible.credit.me.lib_base.utils.StatusBarUtil
 import com.flexible.credit.me.lib_base.utils.getClass
 
 abstract class BaseDataBindingFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {
@@ -45,7 +46,7 @@ abstract class BaseDataBindingFragment<VM : BaseViewModel, DB : ViewDataBinding>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        StatusBarUtil.setFullScreen(requireActivity().window)
         isViewInitiated = true
         initView(view)
         initEvent()

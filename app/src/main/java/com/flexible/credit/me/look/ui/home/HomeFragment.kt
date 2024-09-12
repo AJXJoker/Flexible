@@ -3,6 +3,7 @@ package com.flexible.credit.me.look.ui.home
 import android.view.View
 import com.flexible.credit.me.lib_base.base.BaseDataBindingFragment
 import com.flexible.credit.me.lib_base.utils.LoggerUtils
+import com.flexible.credit.me.lib_base.utils.StatusBarUtil
 import com.flexible.credit.me.look.R
 import com.flexible.credit.me.look.databinding.FragmentHomeBinding
 import com.flexible.credit.me.look.viewmodel.home.HomeViewModel
@@ -14,6 +15,7 @@ class HomeFragment : BaseDataBindingFragment<HomeViewModel, FragmentHomeBinding>
 
     override fun initView(view: View) {
         // 初始化视图
+        StatusBarUtil.addStatusBarMargin(mDataBinding.clHeader)
         LoggerUtils.d("首頁初始化视图")
     }
 

@@ -26,8 +26,12 @@
             </intent-filter>
         </activity>
 
-
         <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.order.OrderConfirmationActivity" />
+        <activity android:name=".ui.history.BorrowingHistoryActivity" />
+        <activity android:name=".ui.bank.BankManagementActivity" />
+        <activity android:name=".ui.about.AboutMyActivity" />
+        <activity android:name=".ui.set.SetActivity" />
     </application>
 
 </manifest>

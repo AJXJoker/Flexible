@@ -3,6 +3,7 @@ package com.flexible.credit.me.look
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.flexible.credit.me.lib_base.base.BaseDataBindingActivity
+import com.flexible.credit.me.lib_base.utils.LoggerUtils
 import com.flexible.credit.me.lib_base.utils.route.Route
 import com.flexible.credit.me.lib_base.utils.route.RouteTable
 import com.flexible.credit.me.look.adapter.FragmentAdapter
@@ -31,7 +32,7 @@ class MainActivity : BaseDataBindingActivity<MainViewModel, ActivityMainBinding>
 
         // 设置 offscreenPageLimit
         mDataBinding.viewPager.offscreenPageLimit = fragments.size
-
+        mDataBinding.viewPager.isUserInputEnabled = false
         // 处理 RadioGroup 和 ViewPager2 的联动
         mDataBinding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
@@ -47,7 +48,13 @@ class MainActivity : BaseDataBindingActivity<MainViewModel, ActivityMainBinding>
             override fun onPageSelected(position: Int) {
                 when (position) {
                     0 -> mDataBinding.radioGroup.check(R.id.radio_home)
-                    1 -> mDataBinding.radioGroup.check(R.id.radio_order)
+                    1 -> {
+                        LoggerUtils.d("获取数据...")
+                        val fragment: OrderFragment = fragments[1] as OrderFragment
+                        fragment.loadData()
+                        mDataBinding.radioGroup.check(R.id.radio_order)
+                    }
+
                     2 -> mDataBinding.radioGroup.check(R.id.radio_user)
                 }
             }

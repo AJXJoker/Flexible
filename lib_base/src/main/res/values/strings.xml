@@ -14,4 +14,21 @@
     <string name="home_bottom_two_msg">订单</string>
     <string name="home_bottom_three_msg">我的</string>
 
+    <string name="order_msg_btn">GET A LOAN NOW!!!</string>
+    <string name="order_msg_1">还款金额</string>
+    <string name="order_msg_2">借款期限</string>
+    <string name="order_msg_3">还款期限</string>
+    <string name="order_msg_4">确认订单</string>
+
+    <string name="order_msg_5">Confirm</string>
+
+
+    <string name="user_center_title_msg">个人中心</string>
+    <string name="user_center_msg_1">您好~</string>
+    <string name="user_center_msg_2">借款历史</string>
+    <string name="user_center_msg_3">银行账户</string>
+    <string name="user_center_msg_4">设置</string>
+    <string name="user_center_msg_5">关于我们</string>
+    <string name="user_center_msg_6">隐私协议</string>
+    <string name="user_center_msg_7">意见反馈</string>
 </resources>

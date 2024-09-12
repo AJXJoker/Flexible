@@ -1,29 +1,48 @@
 package com.flexible.credit.me.look.ui.home
 
 import android.view.View
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.flexible.credit.me.lib_base.base.BaseDataBindingFragment
 import com.flexible.credit.me.lib_base.utils.LoggerUtils
+import com.flexible.credit.me.lib_base.utils.StatusBarUtil
+import com.flexible.credit.me.lib_base.utils.route.RouteTable
+import com.flexible.credit.me.lib_base.utils.route.Router
 import com.flexible.credit.me.look.R
+import com.flexible.credit.me.look.adapter.order.OrderAdapter
 import com.flexible.credit.me.look.databinding.FragmentOrderBinding
 import com.flexible.credit.me.look.viewmodel.home.HomeViewModel
+import com.flexible.credit.me.look.viewmodel.home.OrderViewModel
 
-class OrderFragment : BaseDataBindingFragment<HomeViewModel, FragmentOrderBinding>() {
+class OrderFragment : BaseDataBindingFragment<OrderViewModel, FragmentOrderBinding>() {
 
+    private lateinit var orderAdapter: OrderAdapter
 
     override fun getLayoutId(): Int = R.layout.fragment_order
 
     override fun initView(view: View) {
-        // 初始化视图
-        LoggerUtils.d("订单页面初始化视图")
+        StatusBarUtil.addStatusBarMargin(mDataBinding.clHeader)
     }
 
     override fun loadData() {
-        // 加载数据，仅在懒加载条件满足时调用
-        LoggerUtils.d("订单页面加载数据，仅在懒加载条件满足时调用")
+        orderAdapter = OrderAdapter(listOf()) // 初始化空的订单列表
+        mDataBinding.rvOrderList.layoutManager = LinearLayoutManager(activity)
+        mDataBinding.rvOrderList.adapter = orderAdapter
+
+        viewModel.getMockOrders()
     }
 
     override fun initEvent() {
         // 初始化事件
+
+        viewModel.orders.observe(viewLifecycleOwner, Observer { orders ->
+            orderAdapter.updateData(orders ?: emptyList())
+        })
+
+        mDataBinding.tvOk.setOnClickListener {
+            Router.navigate(requireActivity(), RouteTable.ORDERCONFIRMATION)
+        }
+
     }
 
 }
