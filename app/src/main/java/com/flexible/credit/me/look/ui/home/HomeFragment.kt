@@ -4,6 +4,8 @@ import android.view.View
 import com.flexible.credit.me.lib_base.base.BaseDataBindingFragment
 import com.flexible.credit.me.lib_base.utils.LoggerUtils
 import com.flexible.credit.me.lib_base.utils.StatusBarUtil
+import com.flexible.credit.me.lib_base.utils.route.RouteTable
+import com.flexible.credit.me.lib_base.utils.route.Router
 import com.flexible.credit.me.look.R
 import com.flexible.credit.me.look.databinding.FragmentHomeBinding
 import com.flexible.credit.me.look.viewmodel.home.HomeViewModel
@@ -26,6 +28,10 @@ class HomeFragment : BaseDataBindingFragment<HomeViewModel, FragmentHomeBinding>
 
     override fun initEvent() {
         // 初始化事件
+
+        mDataBinding.tvApply.setOnClickListener {
+            Router.navigate(requireActivity(), RouteTable.APPLYINFO)
+        }
     }
 
 }

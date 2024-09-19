@@ -6,9 +6,11 @@ import android.content.Context
 import android.os.Bundle
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
+import com.flexible.credit.me.lib_base.http.RetrofitClient
 import com.flexible.credit.me.lib_base.utils.ActivityStackManager
 import com.flexible.credit.me.lib_base.utils.LanguageUtil
 import com.flexible.credit.me.lib_base.utils.LoggerUtils
+import com.flexible.credit.me.lib_base.utils.SharedPreferencesUtil
 import com.flexible.credit.me.lib_base.utils.route.RouteTable
 import com.flexible.credit.me.lib_base.utils.route.Router
 
@@ -51,10 +53,12 @@ class FlexibleApplication : MultiDexApplication() {
 
     private fun initLogging() {
         // 日志系统初始化
+        SharedPreferencesUtil.init(this)
     }
 
     private fun initNetwork() {
         // 网络配置初始化
+        RetrofitClient.init(this)
     }
 
     private fun initDatabase() {
@@ -88,7 +92,7 @@ class FlexibleApplication : MultiDexApplication() {
     private val activityLifecycleCallbacks = object : Application.ActivityLifecycleCallbacks {
 
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
-           // LoggerUtils.e("Activity Created: ${activity.localClassName}")
+            // LoggerUtils.e("Activity Created: ${activity.localClassName}")
             // 添加到堆栈
             ActivityStackManager.instance.addActivity(activity)
         }
@@ -119,5 +123,7 @@ class FlexibleApplication : MultiDexApplication() {
             ActivityStackManager.instance.removeActivity(activity)
         }
     }
+
+
 
 }

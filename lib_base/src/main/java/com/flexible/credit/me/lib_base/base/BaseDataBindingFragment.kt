@@ -11,6 +11,10 @@ import androidx.lifecycle.Observer
 import androidx.fragment.app.Fragment
 import com.flexible.credit.me.lib_base.utils.StatusBarUtil
 import com.flexible.credit.me.lib_base.utils.getClass
+import org.json.JSONException
+import java.net.ConnectException
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
 
 abstract class BaseDataBindingFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {
 
@@ -56,8 +60,6 @@ abstract class BaseDataBindingFragment<VM : BaseViewModel, DB : ViewDataBinding>
         viewModel.loading.observe(viewLifecycleOwner, Observer { isLoading ->
         })
 
-        viewModel.error.observe(viewLifecycleOwner, Observer { errorMsg ->
-        })
     }
 
     private fun lazyLoad() {

@@ -32,6 +32,7 @@
         <activity android:name=".ui.bank.BankManagementActivity" />
         <activity android:name=".ui.about.AboutMyActivity" />
         <activity android:name=".ui.set.SetActivity" />
+        <activity android:name=".ui.apply.ApplyInfoActivity" />
     </application>
 
 </manifest>

@@ -21,6 +21,7 @@ lifecycleViewmodelKtx = "2.7.0"
 loggingInterceptor = "4.10.0"
 multidex = "2.0.1"
 okhttp = "4.10.0"
+playServicesAdsIdentifier = "18.1.0"
 reflections = "0.9.12"
 retrofit = "2.9.0"
 fragmentKtx = "1.6.0"
@@ -60,6 +61,7 @@ kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutine
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
 okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+play-services-ads-identifier = { module = "com.google.android.gms:play-services-ads-identifier", version.ref = "playServicesAdsIdentifier" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }

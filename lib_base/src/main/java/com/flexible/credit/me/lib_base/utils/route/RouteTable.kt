@@ -1,6 +1,7 @@
 package com.flexible.credit.me.lib_base.utils.route
 
 object RouteTable {
+
     const val LOGIN = "/login/LoginActivity"
     const val MAIN = "/main/MainActivity"
     const val ORDERCONFIRMATION = "/order/OrderConfirmation"
@@ -8,6 +9,7 @@ object RouteTable {
     const val BANKMANAGEMENT = "/history/BankManagement"
     const val ABOUTMY = "/about/AboutMy"
     const val SET = "/set/SetActivity"
+    const val APPLYINFO = "/apply/ApplyInfoActivity"
 
     val routeMap = mapOf(
         LOGIN to "com.flexible.credit.me.look.ui.login.LoginActivity",
@@ -17,5 +19,6 @@ object RouteTable {
         BANKMANAGEMENT to "com.flexible.credit.me.look.ui.bank.BankManagementActivity",
         ABOUTMY to "com.flexible.credit.me.look.ui.about.AboutMyActivity",
         SET to "com.flexible.credit.me.look.ui.set.SetActivity",
+        APPLYINFO to "com.flexible.credit.me.look.ui.apply.ApplyInfoActivity",
     )
 }

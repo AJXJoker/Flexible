@@ -77,5 +77,8 @@ dependencies {
     api libs.androidx.constraintlayout
     api libs.androidx.viewpager2
 
+    api libs.play.services.ads.identifier
+
+
 }
 

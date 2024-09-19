@@ -1,27 +1,75 @@
 package com.flexible.credit.me.lib_base.http
 
-data class SendCodeResponse(
-    override val statusHbpsDDn: Int = 0,
-    override val messageqxtEU52: String = "",
-    override val modelzzBvcDJ: VerificationCode? = null, // 登录验证码
-    val timekFFnWwl: Long = 0,
-    val maxAgeAhPzCnz: Long = 0
-) : BaseResponse(statusHbpsDDn, messageqxtEU52, modelzzBvcDJ)
+// 通用的响应数据模型，包含所有接口共有的字段
+open class BaseResponse(
+    val messageqxtEU52: String,  // 状态描述（例如：错误信息、成功信息等）
+    val timekFFnWwl: Long,       // 时间戳
+    val maxAgeAhPzCnz: Long,     // 最大存活时间（或数据缓存时间）
+    val statusHbpsDDn: Int       // 请求状态码
+)
+
+
+// 数据模型
+data class RequestModelLoginSMS(
+    val modelzzBvcDJ: ModelContentLoginSMS
+)
+
+data class ModelContentLoginSMS(
+    val mobileBQQORrp: String,
+    val phoneCodeUZfqOdW: String
+)
+
+
+data class LoginSMSResponse(
+    val modelzzBvcDJ: String? = null // 验证码数据，可能为空
+) : BaseResponse(
+    messageqxtEU52 = "",  // 这里可以默认值或从外部传入
+    timekFFnWwl = 0L,
+    maxAgeAhPzCnz = 0L,
+    statusHbpsDDn = 0
+)
+
+data class RequestModelLogin(
+    val mobileBQQORrp: String,  // 手机号
+    val phoneCodeUZfqOdW: String,  // 国家编码
+    val codeSoYhzML: String  // 验证码
+)
+
+
+
+// 登录结果数据模型
+data class LoginResponse(
+    val usert4WYzkt: UserInfo,        // 用户信息
+    val googleTestVRiKiXz: Boolean,   // 是否 Google 测试账号
+    val surfaceApijaJPI: Boolean,     // 是否 A 面用户，非金融面
+    val extraove3bBx: Any? = null     // 额外数据，可以为任意对象类型
+) : BaseResponse(
+    messageqxtEU52 = "",  // 这里可以默认值或从外部传入
+    timekFFnWwl = 0L,
+    maxAgeAhPzCnz = 0L,
+    statusHbpsDDn = 0
+)
+
+
+// 用户信息模型
+data class UserInfo(
+    val userIddiPK5Ot: String,  // 用户编号
+    val userNameBvvOZ91: String,  // 用户姓名 (需要根据实际情况，当前数据结构中没有提供该字段)
+    val tokenymkFo2c: String,  // 授权 token
+    val auth2Verify: Boolean,  // 是否通过二次验证
+    val phone: String,  // 用户手机号
+    val root: Boolean,  // 是否为超级用户
+    val createdTime: Long,  // 创建时间（时间戳）
+    val phoneCode: String,  // 手机号区域码
+    val googleTestVRiKiXz: String,  // Google 测试字段
+    val enabled2Verify: Boolean  // 是否启用二次验证
+)
+
 
 data class VerificationCode(
     val code: String? = null // 验证码
 )
 
-data class LoginResponse(
-    override val statusHbpsDDn: Int = 0,
-    override val messageqxtEU52: String = "",
-    override val modelzzBvcDJ: User? = null, // 用户信息
-    val googleTestVRiKiXz: Boolean = false, // 是否google测试账号
-    val surfaceApijaJPI: Boolean = false, // 是否a面用户
-    val extraove3bBx: Any? = null, // 额外信息
-    val timekFFnWwl: Long = 0,
-    val maxAgeAhPzCnz: Long = 0
-) : BaseResponse(statusHbpsDDn, messageqxtEU52, modelzzBvcDJ)
 
 data class User(
     val userIddiPK5Ot: String? = null, // 用户编号
@@ -77,3 +125,5 @@ data class Product(
     val termW1yCzAm: String, // 产品周期
     val amountAs1NQoA: String // 产品金额
 )
+
+
