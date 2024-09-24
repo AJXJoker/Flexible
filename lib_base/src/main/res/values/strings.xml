@@ -31,4 +31,8 @@
     <string name="user_center_msg_5">关于我们</string>
     <string name="user_center_msg_6">隐私协议</string>
     <string name="user_center_msg_7">意见反馈</string>
+
+
+
+    <string name="apply_next_msg">下一步</string>
 </resources>

@@ -5,6 +5,7 @@ import com.flexible.credit.me.lib_base.base.Const
 import com.flexible.credit.me.lib_base.utils.AESEncryptionUtil
 import com.flexible.credit.me.lib_base.utils.DataAssembler
 import com.flexible.credit.me.lib_base.utils.JsonUtils
+import com.flexible.credit.me.lib_base.utils.LoggerUtils
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
@@ -41,6 +42,13 @@ object RetrofitClient {
             .header("TokenL0W0TL7", tokenL0W0TL7)
             .method(original.method, original.body) // 保持原请求方法和 body
             .build()
+
+        // 获取原始请求的 body 和 headers
+        val requestBody = original.body
+        val headers = original.headers
+        LoggerUtils.d("Request Headers size: ${headers.size}")
+        LoggerUtils.d("Request Headers: ${newRequest.headers}")
+        LoggerUtils.d("Request Body: ${requestBody?.let { JsonUtils.toJson(it) } ?: "No Body"}")
 
         chain.proceed(newRequest)
     }

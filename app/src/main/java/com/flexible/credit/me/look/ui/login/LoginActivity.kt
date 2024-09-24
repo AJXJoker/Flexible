@@ -47,6 +47,13 @@ class LoginActivity : BaseDataBindingActivity<LoginViewModel, ActivityLoginBindi
             // Handle loading indicator
         }
 
+        viewModel.isLoginStatus.observe(this) {
+            // Handle loading indicator
+            if (it){
+                Router.navigate(this@LoginActivity, RouteTable.MAIN)
+            }
+        }
+
         viewModel.sendCode.observe(this) {
             if (it == 0) {
                 mDataBinding.clGetPhoneCode.visibility = View.VISIBLE

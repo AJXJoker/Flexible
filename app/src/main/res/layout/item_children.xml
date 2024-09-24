@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvJobType"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_42"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingStart="@dimen/dp_15"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="Job Type" />
+
+</LinearLayout>

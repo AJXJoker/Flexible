@@ -30,12 +30,19 @@ class OrderFragment : BaseDataBindingFragment<OrderViewModel, FragmentOrderBindi
         mDataBinding.rvOrderList.adapter = orderAdapter
 
         viewModel.getMockOrders()
+
+        viewModel.getOrderList()
     }
 
     override fun initEvent() {
         // 初始化事件
 
         viewModel.orders.observe(viewLifecycleOwner, Observer { orders ->
+            if (orders.isEmpty()) {
+                mDataBinding.clEmpty.visibility = View.VISIBLE
+            } else {
+                mDataBinding.clEmpty.visibility = View.GONE
+            }
             orderAdapter.updateData(orders ?: emptyList())
         })
 

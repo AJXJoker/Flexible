@@ -12,29 +12,29 @@ object LoggerUtils {
 
     fun d(message: String) {
         if (Const.isLogEnabled) {
-            Log.e(logTag,message)
-           // logLongMessage(Log.DEBUG, logTag, message)
+            Log.d(logTag, message)
+            // logLongMessage(Log.DEBUG, logTag, message)
         }
     }
 
     fun d(tag: String, message: String) {
         if (Const.isLogEnabled) {
-            Log.e(tag,message)
+            Log.d(tag, message)
             //logLongMessage(Log.DEBUG, tag, message)
         }
     }
 
     fun e(message: String) {
         if (Const.isLogEnabled) {
-            Log.e(logTag,message)
-          //  logLongMessage(Log.ERROR, logTag, message)
+            Log.e(logTag, message)
+            //  logLongMessage(Log.ERROR, logTag, message)
         }
     }
 
     fun e(tag: String, message: String) {
         if (Const.isLogEnabled) {
-            Log.e(tag,message)
-          //  logLongMessage(Log.ERROR, tag, message)
+            Log.e(tag, message)
+            //  logLongMessage(Log.ERROR, tag, message)
         }
     }
 
@@ -42,12 +42,12 @@ object LoggerUtils {
         Const.isLogEnabled = enabled
     }
 
-    private fun logLongMessage(priority: Int, tag: String, message: String) {
+    fun logLongMessage(message: String) {
         var i = 0
         val length = message.length
         while (i < length) {
             val end = Math.min(length, i + MAX_LOG_LENGTH)
-            Log.println(priority, tag, message.substring(i, end))
+            Log.println(Log.DEBUG, logTag, message.substring(i, end))
             i += MAX_LOG_LENGTH
         }
     }

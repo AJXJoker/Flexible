@@ -23,63 +23,37 @@ class HistoryViewModel : BaseViewModel() {
             // 创建模拟数据
             val mockOrders = listOf(
                 Order(
-                    "Order001",
-                    1500.0,
-                    "NEW",
-                    "New order",
-                    "2024-01-01",
-                    30,
-                    "DAY",
-                    null,
-                    Product("Loan Product", "icon_url", "30 days", "1500"),
-                    "John Doe",
-                    "Male",
-                    "Software Engineer",
-                    "A",
-                    "Good credit",
-                    true,
-                    true,
-                    "A",
-                    "Good contacts",
-                    true,
-                    "A",
-                    "Good SMS",
-                    true,
-                    "A",
-                    "Good banking",
-                    850,
-                    "A",
-                    "High credit score"
+                    idFIfKrAE = "Order001",
+                    amountAs1NQoA = 1500.0,
+                    statusHbpsDDn = "NEW",
+                    statusNotey6OivtC = "New order",
+                    createdxxPxuKQ = "2024-01-01",
+                    termW1yCzAm = 30,
+                    termUnitEBqOUgA = "DAY",
+                    delayAmountJ4tGjnt = null,
+                    productgtUIkIB = Product(
+                        nameverpNre = "Loan Product",
+                        iconjmFxqYT = "icon_url",
+                        termW1yCzAm = "30 days",
+                        amountAs1NQoA = "1500"
+                    )
                 ),
                 Order(
-                    "Order002",
-                    2000.0,
-                    "PASS",
-                    "Order approved",
-                    "2024-01-02",
-                    60,
-                    "DAY",
-                    null,
-                    Product("Investment Product", "icon_url", "60 days", "2000"),
-                    "Jane Smith",
-                    "Female",
-                    "Doctor",
-                    "A",
-                    "Good credit",
-                    true,
-                    true,
-                    "A",
-                    "Good contacts",
-                    true,
-                    "A",
-                    "Good SMS",
-                    true,
-                    "A",
-                    "Good banking",
-                    900,
-                    "A",
-                    "High credit score"
-                ),
+                    idFIfKrAE = "Order002",
+                    amountAs1NQoA = 2000.0,
+                    statusHbpsDDn = "PASS",
+                    statusNotey6OivtC = "Order approved",
+                    createdxxPxuKQ = "2024-01-02",
+                    termW1yCzAm = 60,
+                    termUnitEBqOUgA = "DAY",
+                    delayAmountJ4tGjnt = null,
+                    productgtUIkIB = Product(
+                        nameverpNre = "Investment Product",
+                        iconjmFxqYT = "icon_url",
+                        termW1yCzAm = "60 days",
+                        amountAs1NQoA = "2000"
+                    )
+                )
                 // 添加更多模拟订单...
             )
 
@@ -87,6 +61,7 @@ class HistoryViewModel : BaseViewModel() {
             _orders.value = mockOrders
         }
     }
+
 
 
 }

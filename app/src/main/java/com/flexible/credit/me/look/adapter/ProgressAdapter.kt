@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.flexible.credit.me.lib_base.model.Step
 import com.flexible.credit.me.look.R
 
-class ProgressAdapter(private val steps: List<Step>) :
+class ProgressAdapter(val steps: List<Step>) :
     RecyclerView.Adapter<ProgressAdapter.StepViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StepViewHolder {

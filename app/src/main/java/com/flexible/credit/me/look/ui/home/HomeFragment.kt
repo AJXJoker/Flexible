@@ -1,5 +1,6 @@
 package com.flexible.credit.me.look.ui.home
 
+import BankSelectionDialogFragment
 import android.view.View
 import com.flexible.credit.me.lib_base.base.BaseDataBindingFragment
 import com.flexible.credit.me.lib_base.utils.LoggerUtils
@@ -30,6 +31,23 @@ class HomeFragment : BaseDataBindingFragment<HomeViewModel, FragmentHomeBinding>
         // 初始化事件
 
         mDataBinding.tvApply.setOnClickListener {
+            /*val bankSelectionDialog = BankSelectionDialogFragment().apply {
+                setBankOptions(
+                    listOf(
+                        "contables",
+                        "personal directivo",
+                        "ventas",
+                        "directores",
+                        "administración"
+                    ), "personal directivo"
+                )
+                setOnBankSelectedListener { selectedBank ->
+                    // 处理选择结果
+                    LoggerUtils.d("Selected Bank: $selectedBank")
+                }
+            }
+
+            bankSelectionDialog.show(requireActivity().supportFragmentManager, "bankSelectionDialog")*/
             Router.navigate(requireActivity(), RouteTable.APPLYINFO)
         }
     }

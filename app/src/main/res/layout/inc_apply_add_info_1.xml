@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/dp_15"
+            android:paddingEnd="@dimen/dp_15">
+
+            <!-- 职业 -->
+
+            <!-- 工作时长 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:paddingTop="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 职业"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/job"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_job" />
+
+                <ImageView
+                    android:id="@+id/job_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/job"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/job" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/job" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/label_work_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 工作时长"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/work_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_work_duration" />
+
+                <ImageView
+                    android:id="@+id/work_duration_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/work_duration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/work_duration" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/work_duration" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 月收入 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/label_income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 月收入"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_income" />
+
+                <ImageView
+                    android:id="@+id/income_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/income"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/income" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/income" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- 公司名称 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/label_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 公司名称"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_company_name" />
+
+                <ImageView
+                    android:id="@+id/company_name_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/company_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/company_name" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/company_name" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *工作地 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_workplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 工作地"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/workplace"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_workplace" />
+
+                <ImageView
+                    android:id="@+id/workplace_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/workplace"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/workplace" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/workplace" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *公司详细地址 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_company_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 公司详细地址"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/company_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_company_address" />
+                <!-- <TextView
+                     android:id="@+id/company_address"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/dp_12"
+                     android:text="请选择"
+                     android:textColor="#AAAAAA"
+                     android:textSize="@dimen/sp_12"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toBottomOf="@id/label_company_address" />-->
+
+                <ImageView
+                    android:id="@+id/company_address_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/company_address"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/company_address" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/company_address" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- *公司联系电话 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_company_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 公司联系电话"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--<TextView
+                    android:id="@+id/company_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_company_number" />-->
+
+                <EditText
+                    android:id="@+id/company_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_company_number" />
+
+                <ImageView
+                    android:id="@+id/company_numbers_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/company_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/company_number" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/company_number" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *最高学历 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_education"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 最高学历"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/education"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_education" />
+
+                <ImageView
+                    android:id="@+id/education_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/label_education"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/label_education" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/education" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- *性别 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 性别"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_gender" />
+
+                <ImageView
+                    android:id="@+id/gender_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/gender" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/gender" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *孩子数量 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_number_children"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 孩子数量"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/number_children"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_number_children" />
+
+                <ImageView
+                    android:id="@+id/number_children_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/number_children"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/number_children" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/number_children" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *婚姻情况 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_marital_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 婚姻情况"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/marital_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_marital_status" />
+
+                <ImageView
+                    android:id="@+id/marital_status_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/marital_status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/marital_status" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/marital_status" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *省市区 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_province_city_district"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 省市区"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/province_city_district"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="请选择"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_province_city_district" />
+
+                <ImageView
+                    android:id="@+id/province_city_district_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/province_city_district"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/province_city_district" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/province_city_district" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *街道和门牌号 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_street_house_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 街道和门牌号"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/street_house_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_street_house_number" />
+
+                <ImageView
+                    android:id="@+id/street_house_number_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/street_house_number"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/street_house_number" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/street_house_number" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *Facebook账号 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_facebook_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* Facebook账号"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/facebook_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_facebook_account" />
+
+                <ImageView
+                    android:id="@+id/facebook_account_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/facebook_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/facebook_account" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/facebook_account" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *Line -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_line"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* Facebook账号"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_line" />
+
+                <ImageView
+                    android:id="@+id/line_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/line" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/line" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- *邮箱 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_15">
+
+                <TextView
+                    android:id="@+id/label_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* 邮箱"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_13"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/mail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_42"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:background="@null"
+                    android:hint="请填写"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/sp_12"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_mail" />
+
+                <ImageView
+                    android:id="@+id/mail_icon"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:src="@mipmap/ic_center_row_right"
+                    app:layout_constraintBottom_toBottomOf="@id/mail"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/mail" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_6"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="#DDDDDD"
+                    app:layout_constraintTop_toBottomOf="@id/mail" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

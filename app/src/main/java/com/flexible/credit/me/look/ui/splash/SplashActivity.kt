@@ -11,11 +11,12 @@ import com.flexible.credit.me.lib_base.utils.route.Router
 import com.flexible.credit.me.look.R
 import com.flexible.credit.me.look.databinding.ActivityLaunchBinding
 import com.flexible.credit.me.look.viewmodel.home.MainViewModel
+import com.flexible.credit.me.look.viewmodel.login.LoginViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SplashActivity : BaseDataBindingActivity<MainViewModel, ActivityLaunchBinding>() {
+class SplashActivity : BaseDataBindingActivity<LoginViewModel, ActivityLaunchBinding>() {
 
     override fun getLayoutId(): Int = R.layout.activity_launch
 
@@ -42,7 +43,14 @@ class SplashActivity : BaseDataBindingActivity<MainViewModel, ActivityLaunchBind
             LoggerUtils.d("Android ID: ${deviceIds.androidId}")
             LoggerUtils.d("Google Ad ID: ${deviceIds.googleAdId}")
 
-            Router.navigate(this@SplashActivity, RouteTable.LOGIN)
+            val loginResponse = viewModel.getLoginResponseFromLocal()
+            if (loginResponse != null) {
+                Const.cachedLoginResponse = loginResponse
+                LoggerUtils.d("获取本地缓存成功:" + loginResponse.usert4WYzkt.userIddiPK5Ot)
+                Router.navigate(this@SplashActivity, RouteTable.MAIN)
+            } else {
+                Router.navigate(this@SplashActivity, RouteTable.LOGIN)
+            }
             finish()
         }
     }

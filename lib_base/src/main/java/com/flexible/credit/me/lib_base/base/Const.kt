@@ -13,7 +13,7 @@ object Const {
     lateinit var deviceIds: DeviceIdUtil.DeviceIds
 
     // 登录返回的用户信息
-    private var cachedLoginResponse: LoginResponse? = null
+     var cachedLoginResponse: LoginResponse? = null
 
 
 }

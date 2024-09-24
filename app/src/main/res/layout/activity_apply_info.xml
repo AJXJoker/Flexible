@@ -3,43 +3,103 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.core.widget.NestedScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="none">
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/inc_top"
+                layout="@layout/inc_user_center_page_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_44"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_state_list"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_72"
+                android:layout_marginStart="@dimen/dp_21"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_21"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inc_top"
+                tools:listitem="@layout/item_progress_step" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_top">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/black"
-                android:paddingBottom="@dimen/dp_20"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/tv_next"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <include
-                    android:id="@+id/inc_top"
-                    layout="@layout/inc_user_center_page_header"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_44"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="match_parent">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_state_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/dp_21"
-                    android:layout_marginEnd="@dimen/dp_21"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/inc_top"
-                    tools:listitem="@layout/item_progress_step" />
+                    <include
+                        android:id="@+id/inc_apply_1"
+                        layout="@layout/inc_apply_add_info_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    <include
+                        android:id="@+id/inc_apply_2"
+                        layout="@layout/inc_apply_add_info_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/inc_apply_3"
+                        layout="@layout/inc_apply_add_info_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@+id/inc_apply_4"
+                        layout="@layout/inc_apply_add_info_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+            <TextView
+                android:id="@+id/tv_next"
+                android:layout_width="@dimen/dp_330"
+                android:layout_height="@dimen/dp_42"
+                android:layout_marginBottom="@dimen/dp_60"
+                android:background="@drawable/rounded_rectangle_black_30"
+                android:gravity="center"
+                android:text="@string/apply_next_msg"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

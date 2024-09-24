@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.flexible.credit.me.lib_base.base.BaseViewModel
+import com.flexible.credit.me.lib_base.base.Const
 import com.flexible.credit.me.lib_base.http.LoginResponse
 import com.flexible.credit.me.lib_base.http.LoginSMSResponse
 import com.flexible.credit.me.lib_base.http.ModelContentLoginSMS
@@ -29,6 +30,7 @@ class LoginViewModel : BaseViewModel() {
     private val _responseLiveData = MutableLiveData<String>()
 
     var sendCode: MutableLiveData<Int> = MutableLiveData()
+    var isLoginStatus: MutableLiveData<Boolean> = MutableLiveData()
 
 
     fun sendCode(mobile: String, phoneCode: String) {
@@ -85,12 +87,10 @@ class LoginViewModel : BaseViewModel() {
                         if (loginResponse != null) {
                             if (loginResponse.statusHbpsDDn == 0) {
                                 saveLoginResponseToLocal(loginResponse)
-                                val loginResponse = getLoginResponseFromLocal()
-                                if (loginResponse != null) {
-                                    LoggerUtils.d("获取本地缓存成功:"+loginResponse.usert4WYzkt.userIddiPK5Ot)
-                                }
+                                isLoginStatus.value = true
                                 LoggerUtils.e("登录成功")
                             } else {
+                                isLoginStatus.value = false
                                 LoggerUtils.d("${loginResponse.statusHbpsDDn}:登录失败:${loginResponse.messageqxtEU52}")
                             }
                         }
@@ -119,7 +119,7 @@ class LoginViewModel : BaseViewModel() {
         SharedPreferencesUtil.saveObject("login_response", loginResponse)
     }
 
-    private fun getLoginResponseFromLocal(): LoginResponse? {
+    fun getLoginResponseFromLocal(): LoginResponse? {
         // 从 SharedPreferences 获取 LoginResponse 对象
         return SharedPreferencesUtil.getObject("login_response", LoginResponse::class.java)
     }
